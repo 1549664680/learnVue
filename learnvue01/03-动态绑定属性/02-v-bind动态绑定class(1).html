@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .active{
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <!-- <h2 class="active">{{message}}</h2> -->
+    <!-- <h2 :class="active">{{message}}</h2> -->
+    <h1 v-bind:class="{'active':isActive,'line':isLine}">{{message}}</h1>
+    <h1 v-bind:class="getClasses()">{{message}}</h1>
+    <!-- 开可以绑定 函数 记得加括号-->
+    <button v-on:click="btnclick">按钮</button>
+  </div>
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el:"#app",
+      data:{
+        message:'hello',
+        isActive:true,
+        isLine:true
+      },
+      methods:{
+        btnclick(){
+          this.isActive = !this.isActive
+        },
+        getClasses(){
+          return {'active':this.isActive,'line':this.isLine}
+        }
+      }
+    })
+  </script>
+</body>
+</html>

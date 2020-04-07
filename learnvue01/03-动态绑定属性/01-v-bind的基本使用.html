@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <h2>{{message}}</h2>
+    <img v-bind:src="url" alt="">
+    <img :src="url" alt="">
+    <!-- 语法糖 ：简写 -->
+  </div>
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el:"#app",
+      data:{
+        message:'hello',
+        url:'https://user-gold-cdn.xitu.io/2020/4/3/1713ef94de390a8c?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1'
+      }
+    })
+  </script>
+</body>
+</html>
